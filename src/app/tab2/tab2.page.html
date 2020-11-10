@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="apps"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button class="bordered" fill="solid" color="light">
+        <ion-icon color="custom" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+    <ion-item lines="none">
+      <ion-label>
+          <h3>Olá, esses são seus Pets</h3>
+      </ion-label>
+
+    </ion-item>
+
+</ion-header>
+
+<ion-content>
+  
+  <div class="slides ion-margin-bottom">
+    <ion-slides [options]="slidesOptions">
+      <ion-slide *ngFor="let p of personas">
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img [src]="p.url">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left"> 
+            <ion-card-title class="ion-margin-bottom">{{p.nome}}</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">Idade: {{p.idade}}</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-right">Raça: {{p.raca}}</ion-card-subtitle>             
+            <ion-progress-bar color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+    
+  </div>
+
+  <div class="container">
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-itens-center">        
+          <ion-col>
+            <ion-label>
+              <h5>Dicas de cuidados:</h5>
+              <h6>Deixe o ambiente limpo e adequado.</h6>
+              <h6>Faça passeios regulares.</h6>
+              <h6>Não esqueça de fazer a vacinação.</h6>
+              <h6>Forneça uma alimentação de qualidade.</h6>
+              <h6>Incentive a execução de brincadeiras.</h6>
+              <h6>Dê todo o carinho necessário.</h6>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+      
+    <ion-fab horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+</ion-content>

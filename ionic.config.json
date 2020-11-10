@@ -1,0 +1,7 @@
+{
+  "name": "uniao",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
