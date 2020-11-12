@@ -1,17 +1,46 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="apps"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button class="bordered" fill="solid" color="light">
+        <ion-icon color="custom" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
+  <ion-item lines="none">
+
+    <ion-searchbar animated></ion-searchbar>
+
+
+  </ion-item>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content>
+  
+  <ion-item lines="none">
+    <ion-col>
+      <ion-label><b>Serviços Agendados</b></ion-label>         
+        <ion-list *ngFor="let p of agendado">
+          <ion-item lines="none">Serviço:{{p.servico}} / Data:{{p.data}}</ion-item>        
+        </ion-list> 
+    </ion-col>    
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-col>
+      <ion-label><b>Histórico de serviços</b></ion-label>         
+        <ion-list *ngFor="let h of historico">
+          <ion-item lines="none">Serviço:{{h.servico}} / Data:{{h.data}}</ion-item>
+        </ion-list> 
+    </ion-col>    
+  </ion-item>
+
 </ion-content>

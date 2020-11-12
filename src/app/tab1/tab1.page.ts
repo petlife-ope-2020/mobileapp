@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -6,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
-
-  constructor() { }
-
   slidesOptions = {
-    slidesPerView: 1.5
+    slidesPerView: 1
   };
+
+
+  constructor(public nav: NavController) { }
+  abrirLoja(x) {
+    this.nav.navigateForward(x);
+  }
+
+
 
   ngOnInit() {
   }
