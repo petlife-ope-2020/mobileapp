@@ -20,8 +20,8 @@ const routes: Routes = [
         loadChildren: () => import('../client-services/client-services.module').then(m => m.ClientServicesPageModule)
       },
       {
-        path: 'tab4',
-        loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
         path: '',
