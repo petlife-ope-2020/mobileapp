@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -15,7 +17,7 @@
 
     <ion-item lines="none">
       <ion-label>
-          <h3>Olá, esses são seus Pets</h3>
+          <h2>Olá, esses são seus Pets</h2>
       </ion-label>
 
     </ion-item>
@@ -65,11 +67,11 @@
     </ion-item>
 
       
-    <ion-fab horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+    <div class="container-form-btn">
+      <button class="form-btn custom-font" (click)="avancar('add-pets')">
+        Adicionar Pet
+      </button>
+    </div> 
   </div>
 
 </ion-content>

@@ -26,21 +26,18 @@
 <ion-content>
   
   <ion-item lines="none">
-    <ion-col>
-      <ion-label><b>Serviços Agendados</b></ion-label>         
-        <ion-list *ngFor="let p of agendado">
-          <ion-item lines="none">Serviço:{{p.servico}} / Data:{{p.data}}</ion-item>        
-        </ion-list> 
-    </ion-col>    
+    <ion-label><b>Serviços agendados</b></ion-label>
+    <ion-button slot="end" (click)="presentAlertPrompt()">CANCELAR</ion-button>
   </ion-item>
-
+  <ion-list *ngFor="let a of agendado">
+    <ion-item>Serviço: {{a.servico}} - Data: {{a.data}}</ion-item>
+  </ion-list>
+  
   <ion-item lines="none">
-    <ion-col>
-      <ion-label><b>Histórico de serviços</b></ion-label>         
-        <ion-list *ngFor="let h of historico">
-          <ion-item lines="none">Serviço:{{h.servico}} / Data:{{h.data}}</ion-item>
-        </ion-list> 
-    </ion-col>    
+    <ion-label><b>Histórico de Serviços</b></ion-label>
   </ion-item>
+  <ion-list *ngFor="let h of historico">
+    <ion-item>Serviço: {{h.servico}} - Data: {{h.data}}</ion-item>
+  </ion-list>
 
 </ion-content>

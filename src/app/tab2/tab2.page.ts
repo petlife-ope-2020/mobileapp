@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -27,11 +28,15 @@ export class Tab2Page implements OnInit  {
     },
   ];
 
-  constructor() {}
+  constructor(public nav: NavController) {}
 
   slidesOptions = {
     slidesPerView: 1,
   };
+
+  avancar(x) {
+    this.nav.navigateForward(x);
+  }
 
   ngOnInit() {
   }

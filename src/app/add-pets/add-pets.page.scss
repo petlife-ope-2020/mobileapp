@@ -1,0 +1,100 @@
+.custom-font {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+ion-toolbar {
+    --background: #f5f5f3;
+
+    ion-title {
+        padding: 20px 0 46px 0;
+        font-weight: 900;
+    }
+
+    p {
+        padding: 40px 0 20px 0;
+        font-weight: 600;
+    }
+}
+
+
+ion-content {
+    --background: rgba(237, 242, 245, .8);
+
+    #header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            font-weight: 700;
+            font-family: sans-serif;
+            font-size: 26px;
+            color: #43b2ce;
+            margin-bottom: 15%;
+        }
+
+        img {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            border: 8px solid #ffffff;
+        }
+    }
+
+    form {
+        margin-top: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .wrap-input {
+        background-color: rgba(255, 255, 255, .8);
+        border-radius: 20px;
+        margin-bottom: 26px;
+        box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.12);
+    }
+
+    .input {
+        display: block;
+        width: 100%;
+        background: transparent;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.2;
+        border: none;
+        outline: none;
+        height: 46px;
+        padding: 0 20px 0 23px;
+    }
+
+    .container-form-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-btn {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        min-width: 160px;
+        height: 42px;
+        background-color: #43CEBB;
+        border-radius: 20px;
+        font-size: 14px;
+        color: #ffffff;
+        text-transform: uppercase;
+        padding-top: 5px;
+        transition: all 0.4s;
+        box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.5);
+        border: none;
+        outline: none;
+    }
+
+    .form-btn:hover {
+        background-color: #43b2ce;
+        box-shadow: 0 10px 30px 0px rgba(35, 47, 56, 0.8);
+    }
+
+}

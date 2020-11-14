@@ -1,3 +1,7 @@
+.custom-font {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 ion-header {
 
     ion-toolbar, ion-item {
@@ -92,4 +96,35 @@ ion-content {
             padding-bottom: 8px;
         }
     }
+    .container-form-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-btn {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        min-width: 160px;
+        height: 42px;
+        background-color: #43CEBB;
+        border-radius: 20px;
+        font-size: 14px;
+        font-family: sans-serif;
+        color: #ffffff;
+        text-transform: uppercase;
+        padding-top: 5px;
+        transition: all 0.4s;
+        box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.5);
+        border: none;
+        outline: none;
+    }
+
+    .form-btn:hover {
+        background-color: #43b2ce;
+        box-shadow: 0 10px 30px 0px rgba(35, 47, 56, 0.8);
+    }
+
 }
