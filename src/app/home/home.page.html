@@ -1,34 +1,14 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon name="apps"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
-    <ion-buttons slot="end">
-      <ion-button class="bordered" fill="solid" color="light">
-        <ion-icon color="custom" name="notifications"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-
   <ion-item lines="none">
     <ion-searchbar animated debounce="500" (ionChange)="pesquisar($event)"></ion-searchbar>
   </ion-item>
-
 </ion-header>
-
-
 <ion-content>
-
   <ion-list *ngFor="let t of testeFilter">
     <ion-item>
       {{ t }}
     </ion-item>
   </ion-list>
-
-  
   <div class="slides ion-margin-bottom">
     <ion-slides [options]="slidesOptions">
       <ion-slide>
@@ -38,15 +18,14 @@
               <img src="assets/logopronto.png">
             </div>
           </ion-card-header>
-          <ion-card-content class="ion-text-left"> 
+          <ion-card-content class="ion-text-left">
             <ion-card-title class="ion-margin-bottom">Shop 1</ion-card-title>
             <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
-            <ion-button expand="block" (click)="abrirShop('shop')">Serviços</ion-button>            
+            <ion-button expand="block" (click)="abrirShop('shop')">Serviços</ion-button>
             <ion-progress-bar color="custom"></ion-progress-bar>
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card>
           <ion-card-header>
@@ -54,15 +33,14 @@
               <img src="assets/logopronto.png">
             </div>
           </ion-card-header>
-          <ion-card-content class="ion-text-left"> 
+          <ion-card-content class="ion-text-left">
             <ion-card-title class="ion-margin-bottom">shop 2</ion-card-title>
             <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
-            <ion-button expand="block">Serviços</ion-button>            
+            <ion-button expand="block">Serviços</ion-button>
             <ion-progress-bar color="custom"></ion-progress-bar>
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card>
           <ion-card-header>
@@ -70,15 +48,14 @@
               <img src="assets/logopronto.png">
             </div>
           </ion-card-header>
-          <ion-card-content class="ion-text-left"> 
+          <ion-card-content class="ion-text-left">
             <ion-card-title class="ion-margin-bottom">Shop 3</ion-card-title>
             <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
-            <ion-button expand="block">Serviços</ion-button>            
+            <ion-button expand="block">Serviços</ion-button>
             <ion-progress-bar color="custom"></ion-progress-bar>
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card>
           <ion-card-header>
@@ -86,30 +63,25 @@
               <img src="assets/logopronto.png">
             </div>
           </ion-card-header>
-          <ion-card-content class="ion-text-left"> 
+          <ion-card-content class="ion-text-left">
             <ion-card-title class="ion-margin-bottom">Shop 4</ion-card-title>
             <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
-            <ion-button expand="block">Serviços</ion-button>            
+            <ion-button expand="block">Serviços</ion-button>
             <ion-progress-bar color="custom"></ion-progress-bar>
           </ion-card-content>
         </ion-card>
       </ion-slide>
     </ion-slides>
-
-    
   </div>
-
   <div class="container">
-
     <h2>Promoções</h2>
-
     <ion-item lines="none">
       <ion-grid>
         <ion-row class="ion-align-itens-center">
           <ion-col size="3">
             <ion-button color="light" fill="clear">
               <ion-icon slot="icon-only" name="american-football-outline"></ion-icon>
-            </ion-button>          
+            </ion-button>
           </ion-col>
           <ion-col size="7">
             <ion-label>
@@ -120,19 +92,18 @@
           <ion-col size="2">
             <ion-button color="light" fill="clear">
               <ion-icon slot="icon-only" name="pricetags-outline"></ion-icon>
-            </ion-button> 
+            </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
-
     <ion-item lines="none">
       <ion-grid>
         <ion-row class="ion-align-itens-center">
           <ion-col size="3">
             <ion-button color="light" fill="clear">
               <ion-icon slot="icon-only" name="basketball-outline"></ion-icon>
-            </ion-button>          
+            </ion-button>
           </ion-col>
           <ion-col size="7">
             <ion-label>
@@ -143,19 +114,18 @@
           <ion-col size="2">
             <ion-button color="light" fill="clear">
               <ion-icon slot="icon-only" name="pricetags-outline"></ion-icon>
-            </ion-button> 
+            </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
-
     <ion-item lines="none">
       <ion-grid>
         <ion-row class="ion-align-itens-center">
           <ion-col size="3">
             <ion-button color="light" fill="clear">
               <ion-icon slot="icon-only" name="baseball-outline"></ion-icon>
-            </ion-button>          
+            </ion-button>
           </ion-col>
           <ion-col size="7">
             <ion-label>
@@ -166,12 +136,10 @@
           <ion-col size="2">
             <ion-button color="light" fill="clear">
               <ion-icon slot="icon-only" name="pricetags-outline"></ion-icon>
-            </ion-button> 
+            </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
-
   </div>
-
 </ion-content>
