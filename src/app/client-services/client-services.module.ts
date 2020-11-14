@@ -17,4 +17,4 @@ import { ClientServicesPageRoutingModule } from './client-services-routing.modul
   ],
   declarations: [ClientServicesPage]
 })
-export class ClientServicesPageModule {}
+export class ClientServicesPageModule { }

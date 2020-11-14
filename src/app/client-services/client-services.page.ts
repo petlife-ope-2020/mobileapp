@@ -9,39 +9,39 @@ import { Component, OnInit } from '@angular/core';
 export class ClientServicesPage implements OnInit {
   agendado = [
     {
-    servico : 'Tosa',
-    data : '24/12/2020'
-  },
-  {
-    servico : 'Banho',
-    data : '22/12/2020'
-  },
-  {
-    servico : 'Vacina',
-    data : '20/12/2020'
-  },
+      servico: 'Tosa',
+      data: '24/12/2020'
+    },
+    {
+      servico: 'Banho',
+      data: '22/12/2020'
+    },
+    {
+      servico: 'Vacina',
+      data: '20/12/2020'
+    },
   ];
 
   historico = [
     {
-      servico : 'Tosa',
-      data : '02/06/2020'
+      servico: 'Tosa',
+      data: '02/06/2020'
     },
     {
-      servico : 'Banho',
-      data : '08/07/2020'
+      servico: 'Banho',
+      data: '08/07/2020'
     },
     {
-      servico : 'Vacina',
-      data : '11/08/2020'
+      servico: 'Vacina',
+      data: '11/08/2020'
     },
   ];
 
   constructor(public nav: NavController,
-              public alertController: AlertController) { }
-    abrirPagina(){
-      this.nav.navigateForward('login');
-    }
+    public alertController: AlertController) { }
+  abrirPagina() {
+    this.nav.navigateForward('login');
+  }
 
 
   async presentAlertPrompt() {
