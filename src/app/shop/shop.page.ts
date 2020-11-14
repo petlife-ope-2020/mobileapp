@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-loja',
-  templateUrl: './loja.page.html',
-  styleUrls: ['./loja.page.scss'],
+  selector: 'app-shop',
+  templateUrl: './shop.page.html',
+  styleUrls: ['./shop.page.scss'],
 })
-export class LojaPage implements OnInit {
+export class ShopPage implements OnInit {
 
    constructor(public alertController: AlertController,
                public nav: NavController) {}

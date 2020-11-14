@@ -32,7 +32,7 @@ export class HomePage implements OnInit {
 
 
   constructor(public nav: NavController) { }
-  abrirLoja(x) {
+  abrirShop(x) {
     this.nav.navigateForward(x);
   }
 
