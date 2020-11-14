@@ -23,10 +23,25 @@ export class LojaPage implements OnInit {
       inputs: [
         // multiline input.
         {
-          name: 'paragraph',
-          id: 'paragraph',
+          name: 'checkbox1',
           type: 'checkbox',
-          placeholder: 'Digite aqui',
+          label: 'Tchunay',
+          value: 'value1',
+          checked: false
+        },
+        {
+          name: 'checkbox1',
+          type: 'checkbox',
+          label: 'Sebastião',
+          value: 'value1',
+          checked: false
+        },
+        {
+          name: 'checkbox1',
+          type: 'checkbox',
+          label: 'Tinoco',
+          value: 'value1',
+          checked: false
         },
       ],
       buttons: [
