@@ -8,7 +8,7 @@ import { NavController } from '@ionic/angular';
 })
 export class AddPetsPage implements OnInit {
 
-  constructor(public nav: NavController) {}
+  constructor(public nav: NavController) { }
 
   voltar(x) {
     this.nav.navigateBack(x);

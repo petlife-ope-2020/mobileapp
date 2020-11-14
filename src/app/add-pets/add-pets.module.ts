@@ -17,4 +17,4 @@ import { AddPetsPage } from './add-pets.page';
   ],
   declarations: [AddPetsPage]
 })
-export class AddPetsPageModule {}
+export class AddPetsPageModule { }
