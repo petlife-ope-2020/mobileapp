@@ -16,8 +16,8 @@ const routes: Routes = [
         loadChildren: () => import('../pets/pets.module').then(m => m.PetsPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'client-services',
+        loadChildren: () => import('../client-services/client-services.module').then(m => m.ClientServicesPageModule)
       },
       {
         path: 'tab4',

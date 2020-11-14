@@ -2,11 +2,11 @@ import { AlertController, NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-client-services',
+  templateUrl: 'client-services.page.html',
+  styleUrls: ['client-services.page.scss']
 })
-export class Tab3Page implements OnInit {
+export class ClientServicesPage implements OnInit {
   agendado = [
     {
     servico : 'Tosa',
