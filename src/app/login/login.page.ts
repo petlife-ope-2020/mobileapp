@@ -10,7 +10,7 @@ export class LoginPage {
 
   signupView = false;
 
-  constructor(public nav: NavController) {}
+  constructor(public nav: NavController) { }
   voltar(x) {
     this.nav.navigateBack(x);
   }
