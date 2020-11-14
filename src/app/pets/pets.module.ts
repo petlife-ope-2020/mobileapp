@@ -16,4 +16,4 @@ import { PetsPageRoutingModule } from './pets-routing.module';
   ],
   declarations: [PetsPage]
 })
-export class PetsPageModule {}
+export class PetsPageModule { }

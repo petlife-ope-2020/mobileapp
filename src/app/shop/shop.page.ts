@@ -8,8 +8,8 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class ShopPage implements OnInit {
 
-   constructor(public alertController: AlertController,
-               public nav: NavController) {}
+  constructor(public alertController: AlertController,
+    public nav: NavController) { }
 
   voltar(x) {
     this.nav.navigateBack(x);

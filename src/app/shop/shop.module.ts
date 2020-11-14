@@ -17,4 +17,4 @@ import { ShopPage } from './shop.page';
   ],
   declarations: [ShopPage]
 })
-export class ShopPageModule {}
+export class ShopPageModule { }

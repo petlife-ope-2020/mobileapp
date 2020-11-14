@@ -9,7 +9,7 @@ describe('ShopPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShopPage ],
+      declarations: [ShopPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
