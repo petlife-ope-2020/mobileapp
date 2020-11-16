@@ -1,19 +1,19 @@
 import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PetsPage } from './pets.page';
 
-import { TabsPageRoutingModule } from './tabs-routing.module';
-
-import { TabsPage } from './tabs.page';
+import { PetsPageRoutingModule } from './pets-routing.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule
+    PetsPageRoutingModule
   ],
-  declarations: [TabsPage]
+  declarations: [PetsPage]
 })
-export class TabsPageModule { }
+export class PetsPageModule { }

@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-searchbar></app-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngFor="let t of testeFilter">
+    <ion-item>
+      {{ t }}
+    </ion-item>
+  </ion-list>
+  <div class="slides ion-margin-bottom">
+    <ion-slides [options]="slidesOptions">
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="assets/logopronto.png">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Shop 1</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
+            <ion-button expand="block" (click)="abrirShop('shop')">Serviços</ion-button>
+            <ion-progress-bar color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="assets/logopronto.png">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">shop 2</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
+            <ion-button expand="block">Serviços</ion-button>
+            <ion-progress-bar color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="assets/logopronto.png">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Shop 3</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
+            <ion-button expand="block">Serviços</ion-button>
+            <ion-progress-bar color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="assets/logopronto.png">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Shop 4</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
+            <ion-button expand="block">Serviços</ion-button>
+            <ion-progress-bar color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="container">
+    <span style="text-decoration: underline;">
+      <h2>Rede Pet-X</h2>
+    </span>
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-label>
+          <h5>
+            <p>A Rede PET-X, tem como missão se<br> dedicar a aumentar o conhecimento<br>
+              sobre o mundo Pet prezando sempre pela<br> qualidade e melhor atendimento,
+              a rede<br> está sempre atualizada com as novas<br> tendências de mercado, realizando<br>
+              regularmente cursos e workshop para<br> seus colaboradores
+              para garantir que<br> sempre seja fornecido a melhor opção<br>
+              de serviço a seus clientes.</p>
+          </h5>
+        </ion-label>
+      </ion-grid>
+    </ion-item>
+  </div>
+</ion-content>

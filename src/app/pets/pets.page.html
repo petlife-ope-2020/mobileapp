@@ -1,0 +1,65 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+    <ion-label>
+      <h2>Olá, esses são seus Pets</h2>
+    </ion-label>
+  </ion-item>
+</ion-header>
+<ion-content>
+  <div class="slides ion-margin-bottom">
+    <ion-slides [options]="slidesOptions">
+      <ion-slide *ngFor="let p of personas">
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img [src]="p.url">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">{{p.nome}}</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">Idade: {{p.idade}}</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-right">Raça: {{p.raca}}</ion-card-subtitle>
+            <ion-progress-bar color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="container">
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-itens-center">
+          <ion-col>
+            <ion-label>
+              <h4>Dicas de cuidados:</h4>
+              <h5>
+                <li>Deixe o ambiente limpo e adequado.</li>
+              </h5>
+              <h5>
+                <li>Faça passeios regulares.</li>
+              </h5>
+              <h5>
+                <li>Não esqueça de fazer a vacinação.</li>
+              </h5>
+              <h5>
+                <li>Forneça alimentação de qualidade.</li>
+              </h5>
+              <h5>
+                <li>Incentive a execução de brincadeiras.</li>
+              </h5>
+              <h5>
+                <li>Dê todo o carinho necessário.</li>
+              </h5>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="container-form-btn">
+      <button class="form-btn custom-font" (click)="avancar('add-pets')">
+        Adicionar Pet
+      </button>
+    </div>
+  </div>
+</ion-content>
