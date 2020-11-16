@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { SearchbarComponent } from '../searchbar/searchbar.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     FormsModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    SearchbarComponent
+  ]
 })
 export class HomePageModule { }

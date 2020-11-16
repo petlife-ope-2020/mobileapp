@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
-  <ion-item lines="none">
-    <ion-searchbar animated debounce="500" (ionChange)="pesquisar($event)"></ion-searchbar>
-  </ion-item>
+  <ion-toolbar>
+    <app-searchbar></app-searchbar>
+  </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-list *ngFor="let t of testeFilter">

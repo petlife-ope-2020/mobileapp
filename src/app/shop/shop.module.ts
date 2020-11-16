@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ShopPageRoutingModule } from './shop-routing.module';
 
 import { ShopPage } from './shop.page';
+import { SearchbarComponent } from '../searchbar/searchbar.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { ShopPage } from './shop.page';
     IonicModule,
     ShopPageRoutingModule
   ],
-  declarations: [ShopPage]
+  declarations: [
+    ShopPage,
+    SearchbarComponent
+  ]
 })
 export class ShopPageModule { }
