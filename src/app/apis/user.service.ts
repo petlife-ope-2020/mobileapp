@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FormGroup } from '@angular/forms';
 
 
 @Injectable({
@@ -36,6 +35,7 @@ export class UserService {
     Object.keys(updatedUser).forEach(key => {
       form.append(key, updatedUser[key])
     });
+    console.log(updatedUser)
     return this.http.put(`${this.apiAddress}/clients`, form);
   };
 };

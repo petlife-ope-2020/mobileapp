@@ -35,12 +35,13 @@ export class LoginPage {
 
   doLogin(username: string, password: string) {
     this.userService.authenticate(username, password).subscribe(
-      (res: HttpResponse<any>) => {
+      res => {
         this.storage.set('isLoggedIn', true);
         this.storage.set('userObject', res);
+        this.storage.set('password', password)
         this.nav.navigateForward('tabs/home')
       },
-      (err: any) => {
+      err => {
         this.presentAlert({
           header: 'Login Inválido!',
           subHeader: '',
