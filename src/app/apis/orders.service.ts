@@ -17,9 +17,7 @@ export class OrdersService {
     Object.keys(newOrder).forEach(key => {
       form.append(key, newOrder.key)
     });
-    return this.http.post(`${this.apiAddress}/client`, {
-      data: form
-    });
+    return this.http.post(`${this.apiAddress}/client`, form);
   };
 
   cancelOrder(orderId: string): Observable<any> {

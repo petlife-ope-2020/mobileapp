@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="favorite">
     <ion-buttons slot="start">
-      <ion-button (click)="voltar('tabs/home')">
+      <ion-button (click)="doBack()">
         <ion-icon name="arrow-undo-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -17,18 +17,18 @@
     <div class="login-container">
       <ion-list lines="none" class="form fade-in">
         <ion-item>
-          <ion-label>Email</ion-label>
-          <ion-input class="ion-text-right"></ion-input>
+          <ion-label>Usuário</ion-label>
+          <ion-input #username class="ion-text-right"></ion-input>
           <ion-icon slot="end" name="at"></ion-icon>
         </ion-item>
         <ion-item>
           <ion-label>Senha</ion-label>
-          <ion-input class="ion-text-right"></ion-input>
+          <ion-input #password class="ion-text-right"></ion-input>
           <ion-icon slot="end" name="lock-closed"></ion-icon>
         </ion-item>
       </ion-list>
       <div class="container-form-btn">
-        <button class="form-btn custom-font">
+        <button (click)="doLogin(username.value, password.value)" class="form-btn custom-font">
           Login
         </button>
       </div>
@@ -43,43 +43,45 @@
         <ion-icon name="arrow-down" *ngIf="signupView" [ngClass]="{'fade-in': signupView,'fade-out': !signupView}">
         </ion-icon>
       </div>
+      <form [formGroup]="registrationForm" (ngSubmit)="doSignup(registrationForm.value)">
       <ion-list lines="none" class="form" [ngClass]="{'fade-in': signupView,'fade-out': signupView}">
         <ion-item>
           <ion-label>Nome:</ion-label>
-          <ion-input class="ion-text-right"></ion-input>
+          <ion-input #name class="ion-text-right" formControlName="name"></ion-input>
           <ion-icon slot="end" name="person"></ion-icon>
         </ion-item>
         <ion-item>
-          <ion-label>UserName:</ion-label>
-          <ion-input class="ion-text-right"></ion-input>
+          <ion-label>Usuário:</ion-label>
+          <ion-input #username class="ion-text-right" formControlName="username"></ion-input>
           <ion-icon slot="end" name="person"></ion-icon>
         </ion-item>
         <ion-item>
-          <ion-label>Email:</ion-label>
-          <ion-input class="ion-text-right"></ion-input>
+          <ion-label>E-mail:</ion-label>
+          <ion-input #email class="ion-text-right" formControlName="email"></ion-input>
           <ion-icon slot="end" name="at"></ion-icon>
         </ion-item>
         <ion-item>
           <ion-label>Senha:</ion-label>
-          <ion-input class="ion-text-right"></ion-input>
+          <ion-input #password class="ion-text-right" formControlName="password"></ion-input>
           <ion-icon slot="end" name="lock-closed"></ion-icon>
         </ion-item>
         <ion-item>
           <ion-label>Celular:</ion-label>
-          <ion-input class="ion-text-right"></ion-input>
+          <ion-input #phone_number class="ion-text-right" formControlName="phone_number"></ion-input>
           <ion-icon slot="end" name="call"></ion-icon>
         </ion-item>
         <ion-item>
           <ion-label>Endereço:</ion-label>
-          <ion-input class="ion-text-right"></ion-input>
+          <ion-input #address class="ion-text-right" formControlName="address"></ion-input>
           <ion-icon slot="end" name="home"></ion-icon>
         </ion-item>
       </ion-list>
       <div class="container-form-btn">
-        <button class="form-btn custom-font">
+        <button type="submit" class="form-btn custom-font">
           Cadastrar
         </button>
       </div>
+    </form>
     </div>
   </div>
 </ion-content>
