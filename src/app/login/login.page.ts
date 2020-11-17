@@ -33,14 +33,15 @@ export class LoginPage {
     });
   }
 
-  doLogin(username: string, password: string) {
+  async doLogin(username: string, password: string) {
     this.userService.authenticate(username, password).subscribe(
-      (res: HttpResponse<any>) => {
-        this.storage.set('isLoggedIn', true);
-        this.storage.set('userObject', res);
+      async res => {
+        await this.storage.set('isLoggedIn', true);
+        await this.storage.set('userObject', res);
+        await this.storage.set('password', password)
         this.nav.navigateForward('tabs/home')
       },
-      (err: any) => {
+      err => {
         this.presentAlert({
           header: 'Login Inválido!',
           subHeader: '',

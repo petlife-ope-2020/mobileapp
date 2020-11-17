@@ -2,7 +2,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button color="new" (click)="voltar('tabs/pets')">
+      <ion-button color="new" (click)="goBack()">
         <ion-icon slot="icon-only" name="arrow-undo-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -10,25 +10,31 @@
 </ion-header>
 <ion-content>
   <div id="header">
-    <h1><u>Seus novos pets!</u></h1>
-    <img src="assets/logopronto.png">
+    <h1><u>Seu novo pet!</u></h1>
+    <img src="../../assets/logopronto.png">
   </div>
   <div class="ion-padding">
-    <form class="ion-padding">
+    <form [formGroup]="addPetForm" (ngSubmit)="addPet(addPetForm.value)" class="ion-padding">
       <div class="wrap-input">
-        <input class="input" type="text" name="name" placeholder="Digite o nome:">
+        <input #name class="input" type="text" placeholder="Digite o nome:" formControlName="name">
       </div>
       <div class="wrap-input">
-        <input class="input" type="text" name="raça" placeholder="Digite a raça:">
+        <input #species class="input" type="text" placeholder="Digite a espécie:" formControlName="species">
       </div>
       <div class="wrap-input">
-        <input class="input" type="number" name="idade" placeholder="Digite a idade:">
+        <input #breed class="input" type="text" placeholder="Digite a raça:" formControlName="breed">
+      </div>
+      <div class="wrap-input">
+        <input #age_years class="input" type="number" placeholder="Digite a idade (em anos):" formControlName="age_years">
+      </div>
+      <div class="wrap-input">
+        <input #weight_kilos class="input" type="number" placeholder="Digite o peso (em kgs):" formControlName="weight_kilos">
+      </div>
+      <div class="container-form-btn">
+        <button type="submit" class="form-btn custom-font">
+          Adicionar
+        </button>
       </div>
     </form>
-  </div>
-  <div class="container-form-btn">
-    <button class="form-btn custom-font">
-      Adicionar
-    </button>
   </div>
 </ion-content>
