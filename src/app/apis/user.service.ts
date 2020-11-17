@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 
 @Injectable({
@@ -8,37 +9,33 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  apiAddress: string = '';
+  apiAddress: string = 'http://localhost:8085';
 
   constructor(private http: HttpClient) { }
 
   authenticate(username: string, password: string): Observable<any> {
     let form = new FormData();
-    form.append('username', username)
-    form.append('password', password)
-    form.append('type', 'client')
-    return this.http.post(`${this.apiAddress}/auth`, {
-      data: form
-    });
+    form.append('username', username);
+    form.append('password', password);
+    form.append('type', 'client');
+    return this.http.post(`${this.apiAddress}/auth`, form);
   };
 
-  registerUser(newUser: any): Observable<any> {
+  registerUser(newUser: object): Observable<any> {
     let form = new FormData();
     Object.keys(newUser).forEach(key => {
-      form.append(key, newUser.key)
+      form.append(key, newUser[key])
     });
-    return this.http.post(`${this.apiAddress}/clients`, {
-      data: form
-    });
+
+    console.log(newUser)
+    return this.http.post(`${this.apiAddress}/clients`, form);
   };
 
   updateUser(updatedUser: any): Observable<any> {
     let form = new FormData();
     Object.keys(updatedUser).forEach(key => {
-      form.append(key, updatedUser.key)
+      form.append(key, updatedUser[key])
     });
-    return this.http.put(`${this.apiAddress}/clients`, {
-      data: form
-    });
+    return this.http.put(`${this.apiAddress}/clients`, form);
   };
 };
