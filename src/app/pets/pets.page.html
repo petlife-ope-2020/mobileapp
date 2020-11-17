@@ -9,7 +9,7 @@
 <ion-content>
   <div class="slides ion-margin-bottom">
     <ion-slides [options]="slidesOptions">
-      <ion-slide *ngFor="let p of personas">
+      <ion-slide *ngFor="let p of pets">
         <ion-card>
           <ion-card-header>
             <div class="main">
@@ -17,9 +17,11 @@
             </div>
           </ion-card-header>
           <ion-card-content class="ion-text-left">
-            <ion-card-title class="ion-margin-bottom">{{p.nome}}</ion-card-title>
-            <ion-card-subtitle class="ion-text-right">Idade: {{p.idade}}</ion-card-subtitle>
-            <ion-card-subtitle class="ion-text-right">Raça: {{p.raca}}</ion-card-subtitle>
+            <ion-card-title class="ion-margin-bottom">{{p.name}}</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">Idade: {{p.age_years}} anos</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-right">Especie: {{p.species}}</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-right">Raça: {{p.breed}}</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-right">Peso: {{p.weight_kilos}} kg</ion-card-subtitle>
             <ion-progress-bar color="custom"></ion-progress-bar>
           </ion-card-content>
         </ion-card>
@@ -57,7 +59,7 @@
       </ion-grid>
     </ion-item>
     <div class="container-form-btn">
-      <button class="form-btn custom-font" (click)="avancar('add-pets')">
+      <button class="form-btn custom-font" (click)="goToAddPet()">
         Adicionar Pet
       </button>
     </div>
