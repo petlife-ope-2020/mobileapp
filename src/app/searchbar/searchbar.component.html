@@ -1,7 +1,14 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-item lines="none">
-      <ion-searchbar animated debounce="500" (ionChange)="doSearch($event)"></ion-searchbar>
+<ion-searchbar
+    animated showCancelButton="focus"
+    debounce="500"
+    placeholder="Buscar serviços"
+    (ionInput)="doSearch($event.target.value)"
+    (ionFocus)="onFocus()"
+    (ionBlur)="onBlur()"
+    ></ion-searchbar>
+
+<ion-list *ngIf="resultList && focused">
+    <ion-item *ngFor="let result of resultList">
+        {{ result.service_name }}
     </ion-item>
-  </ion-toolbar>
-</ion-header>
+</ion-list>

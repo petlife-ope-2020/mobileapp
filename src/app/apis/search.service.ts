@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class SearchService {
 
-  apiAddress: string = '';
+  apiAddress: string = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
   search(user_query: string): Observable<any> {
-    return this.http.get(`${this.apiAddress}/service_name=${user_query}`)
+    return this.http.get(`${this.apiAddress}/search?service_name=${user_query}`)
   };
 };

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IonInput } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../apis/search.service';
 
 @Component({
   selector: 'app-searchbar',
@@ -8,12 +8,31 @@ import { IonInput } from '@ionic/angular';
 })
 export class SearchbarComponent implements OnInit {
 
-  constructor() { }
+  resultList: Array<object>;
+  focused: boolean;
 
-  ngOnInit() {}
+  constructor(private searchService: SearchService) { }
 
-  doSearch(){
+  ngOnInit() {
 
   }
 
-}
+  doSearch(userInput) {
+    const searchTerm = String(userInput)
+    this.searchService.search(searchTerm).subscribe(res => {
+      this.resultList = res
+    },
+      err => {
+        return
+      })
+  };
+
+  onFocus() {
+    this.focused = true;
+  };
+
+  onBlur() {
+    this.focused = false;
+  };
+
+};
