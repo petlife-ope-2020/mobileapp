@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { UserService } from '../apis/user.service';
 
 @Component({
   selector: 'app-home',
@@ -8,32 +9,28 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  slidesOptions = {
-    slidesPerView: 1,
-  };
+  slidesOptions = { slidesPerView: 1 };
+  shopsList: Array<object>;
 
-  public teste: string[] = [];
-  public testeFilter: string[] = this.teste;
-
+  constructor(
+    public nav: NavController,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
-  }
+    this.getAllShops();
+  };
 
-  public pesquisar(ev: CustomEvent) {
-    const val = ev.detail.value;
-    if (val && val.trim() !== '') {
-      this.testeFilter = this.teste.filter(term =>
-        term.indexOf(val) > -1);
-    }
-    else {
-      this.testeFilter = this.teste;
-    }
-  }
+  getAllShops() {
+    this.userService.getAllShops().subscribe(
+      res => this.shopsList = res
+      ,
+      err => console.error(err)
+    )
+  };
 
-
-  constructor(public nav: NavController) { }
-  abrirShop(x) {
-    this.nav.navigateForward(x);
-  }
+  openShop(shopObject: object) {
+    this.nav.navigateForward('shop', {state: shopObject}); 
+  };
 
 }

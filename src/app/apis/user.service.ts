@@ -35,4 +35,9 @@ export class UserService {
     });
     return this.http.put(`${this.apiAddress}/clients`, form);
   };
+
+  getAllShops(): Observable<any> {
+    return this.http.get(`${this.apiAddress}/shops`)
+  };
+
 };

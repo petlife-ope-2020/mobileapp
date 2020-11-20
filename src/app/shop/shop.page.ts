@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage'
+import { OrdersService } from '../apis/orders.service';
 
 @Component({
   selector: 'app-shop',
@@ -8,65 +10,104 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class ShopPage implements OnInit {
 
-  constructor(public alertController: AlertController,
-    public nav: NavController) { }
+  shop: any;
 
-  voltar(x) {
-    this.nav.navigateBack(x);
-  }
+  constructor(
+    public alertController: AlertController,
+    public nav: NavController,
+    private storage: Storage,
+    private orderService: OrdersService
+  ) { }
 
+  ngOnInit() {
+    this.shop = window.history.state
+  };
 
-  async presentAlertPrompt() {
+  doBack() {
+    window.history.back();
+  };
+
+  async presentOrderPlacementPrompt(chosenService: any) {
+    const pets = await this.getUserPets(),
+      alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Para qual pet será o serviço?',
+        inputs: pets.map((pet: any) => { return { label: pet.name, type: 'radio', value: pet } }),
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: () => { }
+          },
+          {
+            text: 'Confirmar',
+            handler: (chosenPet: object) => {
+              this.presentSchedulePrompt(chosenService, chosenPet)
+            }
+          }
+        ]
+      });
+    await alert.present();
+  };
+
+  async presentSchedulePrompt(chosenService, chosenPet) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Qual pet(s) irá utilizar o serviço?',
-      inputs: [
-        // multiline input.
-        {
-          name: 'checkbox1',
-          type: 'checkbox',
-          label: 'Tchunay',
-          value: 'value1',
-          checked: false
-        },
-        {
-          name: 'checkbox1',
-          type: 'checkbox',
-          label: 'Sebastião',
-          value: 'value1',
-          checked: false
-        },
-        {
-          name: 'checkbox1',
-          type: 'checkbox',
-          label: 'Tinoco',
-          value: 'value1',
-          checked: false
-        },
-      ],
+      header: 'Quando?',
+      inputs: [{ type: 'datetime-local', value: 'chosenTime' }],
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: () => {
-            console.log('Confirm Cancel');
-          }
+          handler: () => { }
         }, {
-          text: 'confirmar',
-          handler: () => {
-            console.log('Confirm Ok');
+          text: 'Confirmar',
+          handler: (chosenTime: any) => {
+            this.placeOrder(chosenPet, chosenService, chosenTime[0])
           }
         }
       ]
     });
-
     await alert.present();
-  }
+  };
 
+  async getUserPets(): Promise<object[]> {
+    const user: object = await this.storage.get('userObject');
+    return user['pets']
+  };
 
-  ngOnInit() {
-  }
+  async placeOrder(pet: any, service: any, time) {
+    const user = await this.storage.get('userObject')
+    this.orderService.placeOrder({
+      petshop_username: this.shop.username,
+      petshop_name: this.shop.name,
+      service_id: service.service_id,
+      service_name: service.service_name,
+      client_username: user.username,
+      client_name: user.name,
+      client_pet: JSON.stringify(pet),
+      schedule_datetime: time
+    }).subscribe(
+
+      async res => {
+        const alert = await this.alertController.create({
+          cssClass: 'my-custom-class',
+          header: 'Pedido enviado com sucesso!',
+          buttons: [{ text: 'Ok!', handler: () => { } }]
+        })
+        await alert.present()
+      },
+
+      async err => {
+        const alert = await this.alertController.create({
+          cssClass: 'my-custom-class',
+          header: 'Erro ao agendar! Tente novamente.',
+          buttons: [{ text: 'Ok!', handler: () => { } }]
+        })
+        await alert.present()
+      })
+  };
 
 }
-

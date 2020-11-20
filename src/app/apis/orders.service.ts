@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class OrdersService {
 
-  apiAddress: string = '';
+  apiAddress: string = 'http://localhost:8086';
 
   constructor(private http: HttpClient) { }
 
   placeOrder(newOrder: any): Observable<any> {
     let form = new FormData();
     Object.keys(newOrder).forEach(key => {
-      form.append(key, newOrder.key)
+      form.append(key, newOrder[key])
     });
     return this.http.post(`${this.apiAddress}/client`, form);
   };

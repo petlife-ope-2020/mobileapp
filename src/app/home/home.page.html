@@ -4,14 +4,9 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-list *ngFor="let t of testeFilter">
-    <ion-item>
-      {{ t }}
-    </ion-item>
-  </ion-list>
   <div class="slides ion-margin-bottom">
     <ion-slides [options]="slidesOptions">
-      <ion-slide>
+      <ion-slide *ngFor="let shop of shopsList">
         <ion-card>
           <ion-card-header>
             <div class="main">
@@ -19,54 +14,9 @@
             </div>
           </ion-card-header>
           <ion-card-content class="ion-text-left">
-            <ion-card-title class="ion-margin-bottom">Shop 1</ion-card-title>
-            <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
-            <ion-button expand="block" (click)="abrirShop('shop')">Serviços</ion-button>
-            <ion-progress-bar color="custom"></ion-progress-bar>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <div class="main">
-              <img src="assets/logopronto.png">
-            </div>
-          </ion-card-header>
-          <ion-card-content class="ion-text-left">
-            <ion-card-title class="ion-margin-bottom">shop 2</ion-card-title>
-            <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
-            <ion-button expand="block">Serviços</ion-button>
-            <ion-progress-bar color="custom"></ion-progress-bar>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <div class="main">
-              <img src="assets/logopronto.png">
-            </div>
-          </ion-card-header>
-          <ion-card-content class="ion-text-left">
-            <ion-card-title class="ion-margin-bottom">Shop 3</ion-card-title>
-            <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
-            <ion-button expand="block">Serviços</ion-button>
-            <ion-progress-bar color="custom"></ion-progress-bar>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <div class="main">
-              <img src="assets/logopronto.png">
-            </div>
-          </ion-card-header>
-          <ion-card-content class="ion-text-left">
-            <ion-card-title class="ion-margin-bottom">Shop 4</ion-card-title>
-            <ion-card-subtitle class="ion-text-right">texto</ion-card-subtitle>
-            <ion-button expand="block">Serviços</ion-button>
+            <ion-card-title class="ion-margin-bottom">{{ shop.name }}</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">{{ shop.address }}</ion-card-subtitle>
+            <ion-button expand="block" (click)="openShop(shop)">Serviços</ion-button>
             <ion-progress-bar color="custom"></ion-progress-bar>
           </ion-card-content>
         </ion-card>
