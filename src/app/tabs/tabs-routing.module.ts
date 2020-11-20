@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Resolver } from '../profile/resolver.service';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule),
+        resolve: { user: Resolver }
       },
       {
         path: '',
@@ -39,6 +41,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ Resolver ]
 })
 export class TabsPageRoutingModule { }
