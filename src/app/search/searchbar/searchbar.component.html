@@ -1,0 +1,9 @@
+<ion-searchbar #searchBar
+               animated="true"
+               showCancelButton="focus"
+               debounce="500"
+               placeholder="Buscar serviços"
+               (ionInput)="doSearch($event.target.value)"
+               (ionFocus)="onFocus()"
+               (ionCancel)="onCancel()">
+</ion-searchbar>

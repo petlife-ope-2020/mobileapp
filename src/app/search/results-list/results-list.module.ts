@@ -4,24 +4,24 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule, IonSearchbar } from '@ionic/angular';
 
-import { ShopPageRoutingModule } from './shop-routing.module';
+import { ResultsListPageRoutingModule } from './results-list-routing.module';
 
-import { ShopPage } from './shop.page';
-import { SearchbarComponent } from '../search/searchbar/searchbar.component';
+import { ResultsListPage } from './results-list.page';
+import { SearchbarComponent } from '../searchbar/searchbar.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ShopPageRoutingModule
+    ResultsListPageRoutingModule
   ],
   declarations: [
-    ShopPage,
+    ResultsListPage,
     SearchbarComponent
   ],
   providers: [
     IonSearchbar
   ]
 })
-export class ShopPageModule { }
+export class ResultsListPageModule {}

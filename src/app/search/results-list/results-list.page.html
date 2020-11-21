@@ -1,0 +1,12 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-searchbar (resultsEvent)="getResults($event)"></app-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let result of resultList" button (click)="goToSpecificService(result)">
+        {{ result.service_name }}
+    </ion-item>
+</ion-list>
+</ion-content>

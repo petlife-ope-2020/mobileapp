@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { UserService } from '../apis/user.service';
+import { Storage } from '@ionic/storage'
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ export class HomePage implements OnInit {
 
   constructor(
     public nav: NavController,
-    private userService: UserService
+    private userService: UserService,
+    private storage: Storage
   ) { }
 
   ngOnInit() {
@@ -23,7 +25,10 @@ export class HomePage implements OnInit {
 
   getAllShops() {
     this.userService.getAllShops().subscribe(
-      res => this.shopsList = res
+      async res => {
+        this.shopsList = res
+        await this.storage.set('shops', res)
+      }
       ,
       err => console.error(err)
     )
