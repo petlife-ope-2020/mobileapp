@@ -17,8 +17,9 @@ const routes: Routes = [
         loadChildren: () => import('../pets/pets.module').then(m => m.PetsPageModule)
       },
       {
-        path: 'client-services',
-        loadChildren: () => import('../client-services/client-services.module').then(m => m.ClientServicesPageModule)
+        path: 'orders',
+        loadChildren: () => import('../orders/orders.module').then(m => m.OrdersPageModule),
+        resolve: { user: Resolver }
       },
       {
         path: 'profile',
