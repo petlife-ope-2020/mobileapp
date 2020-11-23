@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-pets',
@@ -18,6 +19,9 @@ export class PetsPage implements OnInit {
 
   ngOnInit() {
     this.getUserPets();
+    interval(5000).subscribe(() => {
+      this.getUserPets()
+    })
   };
 
   goToAddPet() {
