@@ -1,5 +1,5 @@
 import { Storage } from '@ionic/storage'
-import { AfterContentChecked, AfterViewChecked, Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { UserService } from '../apis/user.service';
 import { FormBuilder } from '@angular/forms';
@@ -9,7 +9,7 @@ import { Storage } from '@ionic/storage'
   templateUrl: './add-pets.page.html',
   styleUrls: ['./add-pets.page.scss'],
 })
-export class AddPetsPage implements OnInit {
+export class AddPetsPage {
 
   addPetForm: any;
 
@@ -27,9 +27,6 @@ export class AddPetsPage implements OnInit {
       age_years: '',
       weight_kilos: ''
     })
-  }
-
-  ngOnInit() {
   }
 
   goBack() {
