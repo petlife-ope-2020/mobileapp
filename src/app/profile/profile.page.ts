@@ -2,7 +2,7 @@ import { Storage } from '@ionic/storage'
 import { AfterContentChecked, AfterViewChecked, Component, OnChanges, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { UserService } from '../apis/user.service';
 
 @Component({
@@ -22,7 +22,8 @@ export class ProfilePage implements OnInit {
     private route: ActivatedRoute,
     private userService: UserService,
     private alertController: AlertController,
-    private storage: Storage
+    private storage: Storage,
+    private nav: NavController
   ) {
     this.updatedUser = this.formBuilder.group({
       name: '',
@@ -119,6 +120,13 @@ export class ProfilePage implements OnInit {
         })
       }
     )
+  };
+
+  async signOut() {
+    await this.storage.remove('userObject')
+    await this.storage.remove('password')
+    await this.storage.remove('isLoggedIn')
+    await this.nav.navigateRoot('')
   };
 
 }
