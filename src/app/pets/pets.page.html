@@ -11,11 +11,6 @@
     <ion-slides [options]="slidesOptions">
       <ion-slide *ngFor="let p of pets">
         <ion-card>
-          <ion-card-header>
-            <div class="main">
-              <img [src]="p.url">
-            </div>
-          </ion-card-header>
           <ion-card-content class="ion-text-left">
             <ion-card-title class="ion-margin-bottom">{{p.name}}</ion-card-title>
             <ion-card-subtitle class="ion-text-right">Idade: {{p.age_years}} anos</ion-card-subtitle>

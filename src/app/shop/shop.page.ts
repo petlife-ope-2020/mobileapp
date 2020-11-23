@@ -27,6 +27,14 @@ export class ShopPage implements OnInit {
     window.history.back();
   };
 
+  async startOrderPlacement(chosenService: any){
+    if(! await this.storage.get('isLoggedIn')){
+      this.nav.navigateRoot('login')
+    } else {
+      await this.presentOrderPlacementPrompt(chosenService)
+    }
+  };
+
   async presentOrderPlacementPrompt(chosenService: any) {
     const pets = await this.getUserPets(),
       alert = await this.alertController.create({
