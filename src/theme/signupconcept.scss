@@ -1,3 +1,10 @@
+ion-header {
+    ion-toolbar {
+        --background:  #f1f5f8;
+        background:  #f1f5f8;
+    }
+}
+
 .sign-container {
     position: relative;
     display: flex;
@@ -25,7 +32,7 @@
         margin: 0 auto;
 
         ion-item {
-            --background: #63869b;
+            --background: rgba(35, 224, 200, 1) ;
             --border-radius: 4px;
             --border-color: none;
             --highlight-hight: 0;
@@ -67,8 +74,8 @@
 }
 
 .gradient-1 {
-    --background: linear-gradient(180deg, rgba(132, 163, 183, 1) 0%, rgba(97, 135, 157, 1) 100%);
-    background: linear-gradient(180deg, rgba(132, 163, 183, 1) 0%, rgba(97, 135, 157, 1) 100%);
+    --background:  #f1f5f8;
+    background:  #f1f5f8;
 }
 
 .gradient-2 {
