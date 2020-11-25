@@ -18,7 +18,7 @@ ion-toolbar {
 
 
 ion-content {
-    --background: rgba(237, 242, 245, .8);
+    --background: rgb(237, 242, 245);
 
     #header {
         display: flex;
@@ -79,8 +79,8 @@ ion-content {
         padding: 0 20px;
         min-width: 160px;
         height: 42px;
-        background-color: #43CEBB;
-        border-radius: 20px;
+        background-color: #04ADBF;
+        border-radius: 8px;
         font-size: 14px;
         color: #ffffff;
         text-transform: uppercase;
