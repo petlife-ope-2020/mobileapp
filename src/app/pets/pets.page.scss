@@ -32,8 +32,8 @@ ion-header {
 }
 
 ion-content {
-    --background: linear-gradient(90deg, rgba(43, 90, 148, 1) 0%, rgba(45, 120, 229, 1) 35%,
-            rgba(45, 112, 229, 1) 100%);
+    --background: linear-gradient(90deg, rgb(29, 161, 144) 0%, rgb(40, 189, 169)35%,
+    rgba(35, 224, 200, 1) 100%);
 
     .slides {
         background: #f1f5f8;
@@ -113,8 +113,8 @@ ion-content {
         padding: 0 20px;
         min-width: 160px;
         height: 42px;
-        background-color: #43CEBB;
-        border-radius: 20px;
+        background-color: #04ADBF;
+        border-radius: 8px;
         font-size: 14px;
         font-family: sans-serif;
         color: #ffffff;
@@ -127,7 +127,7 @@ ion-content {
     }
 
     .form-btn:hover {
-        background-color: #43b2ce;
+        background-color: #04ADBF;
         box-shadow: 0 10px 30px 0px rgba(35, 47, 56, 0.8);
     }
 
