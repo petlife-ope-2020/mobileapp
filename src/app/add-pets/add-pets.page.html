@@ -14,21 +14,21 @@
     <img src="../../assets/logopronto.png">
   </div>
   <div class="ion-padding">
-    <form [formGroup]="addPetForm" (ngSubmit)="addPet(addPetForm.value)" class="ion-padding">
+    <form [formGroup]="addPetForm" (ngSubmit)="addPet(addPetForm.value)" class="ion-padding" ngNativeValidate>
       <div class="wrap-input">
-        <input #name class="input" type="text" placeholder="Digite o nome:" formControlName="name">
+        <input #name class="input" type="text" placeholder="Digite o nome:" formControlName="name" required>
       </div>
       <div class="wrap-input">
-        <input #species class="input" type="text" placeholder="Digite a espécie:" formControlName="species">
+        <input #species class="input" type="text" placeholder="Digite a espécie:" formControlName="species" required>
       </div>
       <div class="wrap-input">
-        <input #breed class="input" type="text" placeholder="Digite a raça:" formControlName="breed">
+        <input #breed class="input" type="text" placeholder="Digite a raça:" formControlName="breed" required>
       </div>
       <div class="wrap-input">
-        <input #age_years class="input" type="number" placeholder="Digite a idade (em anos):" formControlName="age_years">
+        <input #age_years class="input" type="number" placeholder="Digite a idade (em anos):" formControlName="age_years" required>
       </div>
       <div class="wrap-input">
-        <input #weight_kilos class="input" type="number" placeholder="Digite o peso (em kgs):" formControlName="weight_kilos">
+        <input #weight_kilos class="input" type="number" placeholder="Digite o peso (em kgs):" formControlName="weight_kilos" required>
       </div>
       <div class="container-form-btn">
         <button type="submit" class="form-btn custom-font">
