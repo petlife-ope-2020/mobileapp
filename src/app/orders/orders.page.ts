@@ -13,6 +13,7 @@ export class OrdersPage implements OnInit {
 
   currentUser: any;
 
+  waitingConfirmation: Array<object> = [];
   scheduled: Array<object> = [];
   rejected: Array<object> = [];
   cancelled: Array<object> = [];
@@ -69,7 +70,11 @@ export class OrdersPage implements OnInit {
         let orderTime = new Date(order.schedule.datetime).toLocaleString().replace(/(^|\D)(\d)(?!\d)/g, '$10$2');
         let now = new Date().toLocaleString().replace(/(^|\D)(\d)(?!\d)/g, '$10$2');
         if (orderTime > now) {
-          this.scheduled.push(order)
+          if (order.status.confirmed) {
+            this.scheduled.push(order)
+          } else {
+            this.waitingConfirmation.push(order)
+          }
         } else {
           this.historical.push(order)
         }
@@ -90,6 +95,7 @@ export class OrdersPage implements OnInit {
     this.cancelled.length = 0
     this.scheduled.length = 0
     this.historical.length = 0
+    this.waitingConfirmation.length = 0
   };
 
 }
